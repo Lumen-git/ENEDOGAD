@@ -9,12 +9,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float sprintSpeed = 10f; // Sprinting speed
 
     [SerializeField] private float rotationSpeed = 10f; // Rotation speed
-    [SerializeField] private GameObject Bullet;
-    [SerializeField] private float BulletSpeed = 100f;
+    [SerializeField] private GameObject Bullet; //Bullet prefab
+    [SerializeField] private float BulletSpeed = 100f;  //Bullet speed
+    [SerializeField] private Transform bulletSpawn; //Spawn location of bullet (from player prefab)
 
     private Rigidbody rb;
     private Vector3 moveInput;
-    private bool isShooting;
+
 
     private void Awake()
     {
@@ -35,6 +36,14 @@ public class PlayerController : MonoBehaviour
         Vector3 rotation = transform.localRotation.eulerAngles;
         rotation.y += mouseX * rotationSpeed * Time.deltaTime;
         transform.localRotation = Quaternion.Euler(rotation);
+
+        // Pew pew
+        if (Input.GetButtonDown("Fire1")){
+            GameObject newBullet = Instantiate(Bullet, bulletSpawn.position, Quaternion.Euler(90f, rb.transform.eulerAngles.y, 0f));
+            Rigidbody BulletRB = newBullet.GetComponent<Rigidbody>();
+            BulletRB.velocity = this.transform.forward * BulletSpeed;
+        }
+
     }
 
     private void FixedUpdate()
@@ -43,6 +52,7 @@ public class PlayerController : MonoBehaviour
         Vector3 moveDirection = Quaternion.Euler(0f, transform.eulerAngles.y, 0f) * moveInput;
         Vector3 moveVelocity;
 
+        // Run
         if (Input.GetKey(KeyCode.LeftShift))
         {
             moveVelocity = moveDirection * sprintSpeed;
@@ -50,12 +60,6 @@ public class PlayerController : MonoBehaviour
         else
         {
             moveVelocity = moveDirection * moveSpeed;
-        }
-
-        if (Input.GetButtonDown("Fire1")){
-            GameObject newBullet = Instantiate(Bullet, this.transform.position + new Vector3(0f, .625f, .454f), Quaternion.Euler(0f, 0f, this.transform.rotation.y));
-            Rigidbody BulletRB = newBullet.GetComponent<Rigidbody>();
-            BulletRB.velocity = this.transform.forward * BulletSpeed;
         }
 
         rb.velocity = new Vector3(moveVelocity.x, rb.velocity.y, moveVelocity.z);

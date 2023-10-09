@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4366756, g: 0.48427135, b: 0.56452316, a: 1}
+  m_IndirectSpecularColor: {r: 0.4366756, g: 0.48427194, b: 0.5645252, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -547,6 +547,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75cf9c6529c99e342bb8158485584d65, type: 3}
+--- !u!4 &483880647 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8381551740061357203, guid: 97254455d70c9944aa4fa072ffea990a, type: 3}
+  m_PrefabInstance: {fileID: 1037580660}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &492787563 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8964274422707837747, guid: e760a3d00460f3545bebfdb5c590ac95, type: 3}
@@ -1377,6 +1382,14 @@ PrefabInstance:
       propertyPath: Bullet
       value: 
       objectReference: {fileID: 60568367715154883, guid: 2677d4f258c3c4b838f2d0aef2b57125, type: 3}
+    - target: {fileID: 2816440184400684073, guid: 97254455d70c9944aa4fa072ffea990a, type: 3}
+      propertyPath: BulletSpeed
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2816440184400684073, guid: 97254455d70c9944aa4fa072ffea990a, type: 3}
+      propertyPath: bulletSpawn
+      value: 
+      objectReference: {fileID: 483880647}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
