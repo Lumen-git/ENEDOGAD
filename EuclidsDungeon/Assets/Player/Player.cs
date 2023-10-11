@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private float sprintSpeed = 10f; // Sprinting speed
 
-    [SerializeField] private float rotationSpeed = 10f; // Rotation speed
+    //[SerializeField] private float rotationSpeed = 10f; // Rotation speed
     [SerializeField] private GameObject Bullet; //Bullet prefab
     [SerializeField] private float BulletSpeed = 100f;  //Bullet speed
     [SerializeField] private Transform bulletSpawn; //Spawn location of bullet (from player prefab)
@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        Cursor.lockState = CursorLockMode.Locked; // Lock the cursor to the game window
+        //Cursor.lockState = CursorLockMode.Locked; // Lock the cursor to the game window
     }
 
     private void Update()
@@ -38,19 +38,19 @@ public class PlayerController : MonoBehaviour
         //transform.localRotation = Quaternion.Euler(rotation);
 
         if (Input.GetKeyDown(KeyCode.UpArrow)){
-            transform.eulerAngles = new Vector3(0f, 270f, 0f);
+            rb.transform.eulerAngles = new Vector3(0f, 270f, 0f);
             fire();
         }
         if (Input.GetKeyDown(KeyCode.DownArrow)){
-            transform.eulerAngles = new Vector3(0f, 90f, 0f);
+            rb.transform.eulerAngles = new Vector3(0f, 90f, 0f);
             fire();
         }
         if (Input.GetKeyDown(KeyCode.LeftArrow)){
-            transform.eulerAngles = new Vector3(0f, 180f, 0f);
+            rb.transform.eulerAngles = new Vector3(0f, 180f, 0f);
             fire();
         }
         if (Input.GetKeyDown(KeyCode.RightArrow)){
-            transform.eulerAngles = new Vector3(0f, 0f, 0f);
+            rb.transform.eulerAngles = new Vector3(0f, 0f, 0f);
             fire();
         }
 
