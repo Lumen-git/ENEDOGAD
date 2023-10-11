@@ -26,10 +26,10 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         // Input handling
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
+        float horizontalInput = Input.GetAxis("Vertical") * -1; //Flipping these because of camera angle. Stupid super stupid idea
+        float verticalInput = Input.GetAxis("Horizontal");
 
-        moveInput = new Vector3(horizontalInput, 0f, verticalInput).normalized;
+        moveInput = new Vector3(horizontalInput, 0f, verticalInput);
 
         // Rotate the character based on mouse input
         float mouseX = Input.GetAxis("Mouse X");
@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         // Move the character
-        Vector3 moveDirection = Quaternion.Euler(0f, transform.eulerAngles.y, 0f) * moveInput;
+        Vector3 moveDirection = Quaternion.Euler(0f, 0f, 0f) * moveInput;
         Vector3 moveVelocity;
 
         // Run

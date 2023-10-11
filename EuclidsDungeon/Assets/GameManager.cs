@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
     }
 
     public int RequestHealth(){
-        maxEnemyHealth = (int)(Mathf.Pow(score/100, 2) + 1);
+        maxEnemyHealth = (int)(score/750 + 1);
         if (maxEnemyHealth > 10) maxEnemyHealth = 10;
         if (maxEnemyHealth >= 5){
             minEnemyHealth = maxEnemyHealth - 4;

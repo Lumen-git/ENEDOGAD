@@ -9,24 +9,38 @@ public class Enemy : MonoBehaviour
     private int health;
     private int startingHealth;
 
+    private Transform player;
+    private Rigidbody enemyRB;
+    [SerializeField] int MoveSpeed = 4;
+    //[SerializeField] int MaxDist = 10;
+    //[SerializeField] int MinDist = 5;
 
     // Start is called before the first frame update
     void Start()
     {
         dungeonMaster = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         health = dungeonMaster.RequestHealth();
         startingHealth = health;
         UpdateColor();
+
+        enemyRB = this.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
-    {
+    {   
+        //Health Updates
         UpdateColor();
         if (health <= 0){
-            dungeonMaster.IncreaseScore(10);
+            dungeonMaster.IncreaseScore(10 * (startingHealth));
             Destroy(gameObject);
         }
+
+        //super simple movement
+        transform.LookAt(player);
+        //transform.position += transform.forward * MoveSpeed * Time.deltaTime;
+        enemyRB.velocity = this.transform.forward * MoveSpeed;
     }
 
     public void Damage(){
