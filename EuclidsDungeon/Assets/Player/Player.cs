@@ -32,18 +32,34 @@ public class PlayerController : MonoBehaviour
         moveInput = new Vector3(horizontalInput, 0f, verticalInput);
 
         // Rotate the character based on mouse input
-        float mouseX = Input.GetAxis("Mouse X");
-        Vector3 rotation = transform.localRotation.eulerAngles;
-        rotation.y += mouseX * rotationSpeed * Time.deltaTime;
-        transform.localRotation = Quaternion.Euler(rotation);
+        //float mouseX = Input.GetAxis("Mouse X");
+        //Vector3 rotation = transform.localRotation.eulerAngles;
+        //rotation.y += mouseX * rotationSpeed * Time.deltaTime;
+        //transform.localRotation = Quaternion.Euler(rotation);
 
-        // Pew pew
-        if (Input.GetButtonDown("Fire1")){
-            GameObject newBullet = Instantiate(Bullet, bulletSpawn.position, Quaternion.Euler(90f, rb.transform.eulerAngles.y, 0f));
-            Rigidbody BulletRB = newBullet.GetComponent<Rigidbody>();
-            BulletRB.velocity = this.transform.forward * BulletSpeed;
+        if (Input.GetKeyDown(KeyCode.UpArrow)){
+            transform.eulerAngles = new Vector3(0f, 270f, 0f);
+            fire();
+        }
+        if (Input.GetKeyDown(KeyCode.DownArrow)){
+            transform.eulerAngles = new Vector3(0f, 90f, 0f);
+            fire();
+        }
+        if (Input.GetKeyDown(KeyCode.LeftArrow)){
+            transform.eulerAngles = new Vector3(0f, 180f, 0f);
+            fire();
+        }
+        if (Input.GetKeyDown(KeyCode.RightArrow)){
+            transform.eulerAngles = new Vector3(0f, 0f, 0f);
+            fire();
         }
 
+    }
+
+    private void fire(){
+        GameObject newBullet = Instantiate(Bullet, bulletSpawn.position, Quaternion.Euler(90f, rb.transform.eulerAngles.y, 0f));
+        Rigidbody BulletRB = newBullet.GetComponent<Rigidbody>();
+        BulletRB.velocity = this.transform.forward * BulletSpeed;
     }
 
     private void FixedUpdate()
