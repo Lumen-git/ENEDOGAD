@@ -17,7 +17,8 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody rb;
     private Vector3 moveInput;
-    private Vector3 movement;
+    private int maxHealth = 3;
+    private int activeHealth = 3;
 
 
     private void Awake()
@@ -91,4 +92,11 @@ public class PlayerController : MonoBehaviour
         }
         
     }
+
+    private void OnTriggerEnter(Collider other){
+        if (other.gameObject.tag == "Enemy"){
+            Destroy(other.gameObject);
+        }
+    }
+
 }

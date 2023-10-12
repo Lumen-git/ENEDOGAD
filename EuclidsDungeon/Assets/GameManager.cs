@@ -1,25 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class GameManager : MonoBehaviour
 {
     
-    [SerializeField] TextMeshProUGUI scoreText;
+    [SerializeField] private TextMeshProUGUI scoreText;
     private int score;
     private int maxEnemyHealth = 1;
     private int minEnemyHealth = 1;
     private float timer;
 
-    void Start()
-    {
-        Debug.Log(gameObject.name);
+
+    void Start(){
+        //Debug.Log(gameObject.name);
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update(){
         //Increase score 1 per second
         timer += Time.deltaTime;
 
@@ -51,4 +51,5 @@ public class GameManager : MonoBehaviour
         score += amount;
         scoreText.text = "Score: " + score;
     }
+
 }
