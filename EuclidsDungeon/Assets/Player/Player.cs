@@ -12,9 +12,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject Bullet; //Bullet prefab
     [SerializeField] private float BulletSpeed = 100f;  //Bullet speed
     [SerializeField] private Transform bulletSpawn; //Spawn location of bullet (from player prefab)
+    [SerializeField] private Animator SpriteZ;
+    [SerializeField] private Animator SpriteX;
 
     private Rigidbody rb;
     private Vector3 moveInput;
+    private Vector3 movement;
 
 
     private void Awake()
@@ -77,7 +80,15 @@ public class PlayerController : MonoBehaviour
         {
             moveVelocity = moveDirection * moveSpeed;
         }
-
+        
         rb.velocity = new Vector3(moveVelocity.x, rb.velocity.y, moveVelocity.z);
+        if (moveInput.sqrMagnitude != 0){
+            SpriteZ.SetBool("Walking", true);
+            SpriteX.SetBool("Walking", true);
+        } else {
+            SpriteZ.SetBool("Walking", false);
+            SpriteX.SetBool("Walking", false);
+        }
+        
     }
 }
