@@ -38,7 +38,7 @@ public class BasicSpawnScript : MonoBehaviour
     private void spawn(){
         this.timer = 0f + Random.Range(-.5f,.5f);   //Add a little variation to spawn
         int randomSpawn = Random.Range(0,10);
-        if (dungeonMaster.getScore() > 10 && randomSpawn > 6){
+        if (dungeonMaster.getScore() > 1000 && randomSpawn > 6){
             Instantiate(enemy2, new Vector3(this.transform.position.x, .75f, this.transform.position.z), Quaternion.identity);
         } else {
             Instantiate(enemy1, new Vector3(this.transform.position.x, .75f, this.transform.position.z), Quaternion.identity);

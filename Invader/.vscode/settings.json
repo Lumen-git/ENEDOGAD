@@ -51,5 +51,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "EuclidsDungeon.sln"
+    "dotnet.defaultSolution": "Invader.sln"
 }
