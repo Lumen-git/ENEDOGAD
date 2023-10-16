@@ -14,16 +14,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform bulletSpawn; //Spawn location of bullet (from player prefab)
     [SerializeField] private Animator SpriteZ;
     [SerializeField] private Animator SpriteX;
-
+    private GameManager dungeonMaster;
     private Rigidbody rb;
     private Vector3 moveInput;
-    private int maxHealth = 3;
-    private int activeHealth = 3;
 
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        dungeonMaster = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
         //Cursor.lockState = CursorLockMode.Locked; // Lock the cursor to the game window
     }
 
@@ -94,9 +93,12 @@ public class PlayerController : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other){
+
         if (other.gameObject.tag == "Enemy"){
+            dungeonMaster.damagePlayer();
             Destroy(other.gameObject);
         }
+
     }
 
 }

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 768181098196708580}
   - component: {fileID: 5028167613512589857}
   - component: {fileID: 1829919312712661551}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Plane (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 3510401572105479527}
   - component: {fileID: 6449042905146750705}
   - component: {fileID: 3603416504835530401}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -224,7 +224,7 @@ GameObject:
   - component: {fileID: 2133270411027087738}
   - component: {fileID: 6543322195544970892}
   - component: {fileID: 2774858197793343407}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Plane (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -330,7 +330,7 @@ GameObject:
   - component: {fileID: 3114243382430543442}
   - component: {fileID: 5848385323039529308}
   - component: {fileID: 1237861181951505917}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Exit
   m_TagString: Exit
   m_Icon: {fileID: 0}
@@ -436,7 +436,7 @@ GameObject:
   - component: {fileID: 4117377123014880195}
   - component: {fileID: 3636903902405223542}
   - component: {fileID: 2772253970871545971}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Plane (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -542,7 +542,7 @@ GameObject:
   - component: {fileID: 2650850507026202095}
   - component: {fileID: 8711776412827440733}
   - component: {fileID: 5108580668716312916}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Exit
   m_TagString: Exit
   m_Icon: {fileID: 0}
@@ -648,7 +648,7 @@ GameObject:
   - component: {fileID: 4158782824116028385}
   - component: {fileID: 9082181123786188560}
   - component: {fileID: 6595453754848523044}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Plane (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -754,7 +754,7 @@ GameObject:
   - component: {fileID: 5163176716999114861}
   - component: {fileID: 4602623168350765074}
   - component: {fileID: 3860580372520331282}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Plane (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -860,7 +860,7 @@ GameObject:
   - component: {fileID: 8271421123107494481}
   - component: {fileID: 1474537512079491655}
   - component: {fileID: 7942955212877369190}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Exit
   m_TagString: Exit
   m_Icon: {fileID: 0}
@@ -954,6 +954,100 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &6053083941252103159
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5462846560789908336}
+  - component: {fileID: 4356326171649421224}
+  m_Layer: 7
+  m_Name: Point Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5462846560789908336
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6053083941252103159}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -10, y: 5, z: -7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7902165032054901469}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!108 &4356326171649421224
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6053083941252103159}
+  m_Enabled: 1
+  serializedVersion: 10
+  m_Type: 2
+  m_Shape: 0
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 7
+  m_Range: 10
+  m_SpotAngle: 30
+  m_InnerSpotAngle: 21.80208
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 2
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!1 &6666847340680671451
 GameObject:
   m_ObjectHideFlags: 0
@@ -966,7 +1060,7 @@ GameObject:
   - component: {fileID: 5242050384293044585}
   - component: {fileID: 3951791935640019143}
   - component: {fileID: 4760552066014279203}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Plane (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1072,7 +1166,7 @@ GameObject:
   - component: {fileID: 6632757993529001110}
   - component: {fileID: 6715545499368163992}
   - component: {fileID: 2643645728769057980}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Plane (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1178,7 +1272,7 @@ GameObject:
   - component: {fileID: 6059984673774962224}
   - component: {fileID: 7287082321732645383}
   - component: {fileID: 5073585612569256726}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Exit
   m_TagString: Exit
   m_Icon: {fileID: 0}
@@ -1281,7 +1375,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7888397526203624059}
-  m_Layer: 0
+  - component: {fileID: 1270592142196272691}
+  m_Layer: 7
   m_Name: UnitCenter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1303,6 +1398,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7902165032054901469}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1270592142196272691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7885261595805594802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cf97dde74234a74b966a6de6a1287af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 3876454359718184180, guid: e0cc308b435115a499346880f2633166, type: 3}
 --- !u!1 &8280026803935339590
 GameObject:
   m_ObjectHideFlags: 0
@@ -1315,7 +1423,7 @@ GameObject:
   - component: {fileID: 1450250576041697441}
   - component: {fileID: 7358983912853768756}
   - component: {fileID: 565723773100552948}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Plane (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1418,7 +1526,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7902165032054901469}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: QuadHall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1438,6 +1546,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 5462846560789908336}
+  - {fileID: 7888397526203624059}
   - {fileID: 7857931122444223106}
   - {fileID: 6551521716906511601}
   - {fileID: 2762343014621396478}
@@ -1451,6 +1561,5 @@ Transform:
   - {fileID: 2855575643915069861}
   - {fileID: 1202257322456074395}
   - {fileID: 149801058039398874}
-  - {fileID: 7888397526203624059}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
