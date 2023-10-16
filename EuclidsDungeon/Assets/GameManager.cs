@@ -71,4 +71,15 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void healPlayer(){
+        if (activeHealth < maxHealth){
+            activeHealth++;
+            healthBar[activeHealth-1].enabled = true;
+        }
+    }
+
+    public int getScore(){
+        return score;
+    }
+
 }

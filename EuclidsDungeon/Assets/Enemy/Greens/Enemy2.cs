@@ -1,0 +1,65 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Enemy2 : MonoBehaviour
+{
+
+    private GameManager dungeonMaster;
+    private int health = 5;
+    private int MoveSpeed;
+
+    private Transform player;
+    private Rigidbody enemyRB;
+
+
+    [SerializeField] GameObject healPowerUp;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        dungeonMaster = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        UpdateColor();
+        MoveSpeed = Random.Range(2,7);
+        enemyRB = this.GetComponent<Rigidbody>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {   
+        //Health Updates
+        UpdateColor();
+        if (health <= 0){
+            dungeonMaster.IncreaseScore(25);
+            tryDrop();
+            Destroy(gameObject);
+        }
+
+        //super simple movement
+        transform.LookAt(player);
+        enemyRB.velocity = this.transform.forward * MoveSpeed;
+
+        bool proximity = Vector3.Distance(transform.position, player.position) > 40f;
+        if (proximity) Destroy(gameObject);
+    }
+
+    public void Damage(){
+        health--;
+        UpdateColor();
+    }
+
+    private void UpdateColor(){
+        Color myYellow = new Color(0f, (MoveSpeed)/7f, 0f);
+        GetComponent<Renderer>().material.SetColor("_Color", myYellow);
+        GetComponent<Renderer>().material.SetColor("_EmissionColor", myYellow);
+    }
+
+    private void tryDrop(){
+        int randomNum = Random.Range(0,25);
+        if (randomNum == 5){
+            Instantiate(healPowerUp, this.transform.position, Quaternion.identity);
+        }
+    }
+
+}

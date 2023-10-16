@@ -94,9 +94,12 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other){
 
-        if (other.gameObject.tag == "Enemy"){
+        if (other.gameObject.tag == "Enemy1" || other.gameObject.tag == "Enemy2"){
             dungeonMaster.damagePlayer();
             Destroy(other.gameObject);
+        }
+        if (other.gameObject.tag == "Heal"){
+            other.gameObject.GetComponent<Heal>().powerUpDo();
         }
 
     }

@@ -5,7 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Exit
-  - Enemy
+  - Enemy1
+  - Enemy2
+  - Heal
   layers:
   - Default
   - TransparentFX

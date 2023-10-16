@@ -1,18 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Data.Common;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class BasicSpawnScript : MonoBehaviour
 {
-    [SerializeField] GameObject enemy;
+    [SerializeField] GameObject enemy1;
+    [SerializeField] GameObject enemy2;
     private Transform player;
     private bool proximity = false;
+    private GameManager dungeonMaster;
     private float timer = 1.9f; //Start the timer close to spawn to get enemies going faster
 
     // Start is called before the first frame update
     void Start()
     {
+        dungeonMaster = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
@@ -25,12 +29,20 @@ public class BasicSpawnScript : MonoBehaviour
             this.timer += Time.deltaTime;
 
             if (this.timer >= 2.5){
-                this.timer = 0f;
-                //Vector3 offset = new Vector3(Random.Range(-.7f, .7f), this.transform.position.y , Random.Range(-.7f, .7f));
-                Instantiate(enemy, new Vector3(this.transform.position.x, .75f, this.transform.position.z), Quaternion.identity);
+                spawn();
             }
         }
 
+    }
+
+    private void spawn(){
+        this.timer = 0f + Random.Range(-.5f,.5f);   //Add a little variation to spawn
+        int randomSpawn = Random.Range(0,10);
+        if (dungeonMaster.getScore() > 10 && randomSpawn > 6){
+            Instantiate(enemy2, new Vector3(this.transform.position.x, .75f, this.transform.position.z), Quaternion.identity);
+        } else {
+            Instantiate(enemy1, new Vector3(this.transform.position.x, .75f, this.transform.position.z), Quaternion.identity);
+        }
     }
 
 }

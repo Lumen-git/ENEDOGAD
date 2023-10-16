@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PowerUpTemplate : MonoBehaviour
+public class Heal : MonoBehaviour
 {
     //TEMPALTE VARS
     public float bobbingSpeed = 2.0f;  // Speed of bobbing motion.
@@ -12,11 +12,15 @@ public class PowerUpTemplate : MonoBehaviour
     private float time = 0f;
     //TEMPLATE VARS
 
+    private GameManager dungeonMaster;
+
     void Start()
     {
         //TEMPLATE START
         initialPosition = transform.position;
         //TEMPLATE START
+
+        dungeonMaster = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
     }
 
 
@@ -31,11 +35,9 @@ public class PowerUpTemplate : MonoBehaviour
         //TEMPLATE UPDATE
     }
 
-    private void OnTriggerEnter(Collider other){
-            if (other.gameObject.tag == "Player"){
-                //DO SOMETHING
-                Destroy(gameObject);
-            }
-        }
+    public void powerUpDo(){
+        dungeonMaster.healPlayer();
+        Destroy(gameObject);
+    }
 
 }

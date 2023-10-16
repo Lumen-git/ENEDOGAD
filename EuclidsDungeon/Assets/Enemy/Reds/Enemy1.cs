@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy1 : MonoBehaviour
 {
 
     private GameManager dungeonMaster;
@@ -14,6 +14,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] int MoveSpeed = 4;
     //[SerializeField] int MaxDist = 10;
     //[SerializeField] int MinDist = 5;
+
+    [SerializeField] GameObject healPowerUp;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +36,7 @@ public class Enemy : MonoBehaviour
         UpdateColor();
         if (health <= 0){
             dungeonMaster.IncreaseScore(10 * (startingHealth));
+            tryDrop();
             Destroy(gameObject);
         }
 
@@ -55,6 +58,13 @@ public class Enemy : MonoBehaviour
         Color myRed = new Color((float)health/10, 0f, 0f);
         GetComponent<Renderer>().material.SetColor("_Color", myRed);
         GetComponent<Renderer>().material.SetColor("_EmissionColor", myRed);
+    }
+
+    private void tryDrop(){
+        int randomNum = Random.Range(0,25);
+        if (randomNum == 5){
+            Instantiate(healPowerUp, this.transform.position, Quaternion.identity);
+        }
     }
 
 }

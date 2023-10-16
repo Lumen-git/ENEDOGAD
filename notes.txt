@@ -1,7 +1,8 @@
-Cube model - https://sketchfab.com/3d-models/companion-cube-47502a51b211475b9750b04b4b1dffc4#download
+Portal Cube model - https://sketchfab.com/3d-models/companion-cube-47502a51b211475b9750b04b4b1dffc4#download
 Square Font - https://www.dafont.com/squarefont.font?l[]=10&l[]=1&text=Score%3A+1234567890
 
-Player Sprite adapted from Bezerk for the Atari 2600, and inspired by Bit.Trip 
+Player Sprite adapted from Bezerk for the Atari 2600, and inspired by Bit.Trip
+Heal Sprite inspired by Doom (1993) stim pack texture 
 
 /\ /\ In Game
 

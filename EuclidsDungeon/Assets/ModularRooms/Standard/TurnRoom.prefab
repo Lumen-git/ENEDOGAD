@@ -2303,6 +2303,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2323820318193941990, guid: 1909b9012a422a3429f278ee40635508, type: 3}
+      propertyPath: enemy1
+      value: 
+      objectReference: {fileID: 3876454359718184180, guid: e0cc308b435115a499346880f2633166, type: 3}
+    - target: {fileID: 2323820318193941990, guid: 1909b9012a422a3429f278ee40635508, type: 3}
+      propertyPath: enemy2
+      value: 
+      objectReference: {fileID: 3876454359718184180, guid: 0715aa15930c46c4e93c54d4ebe04b44, type: 3}
     - target: {fileID: 2448550821186664284, guid: 1909b9012a422a3429f278ee40635508, type: 3}
       propertyPath: m_Name
       value: UnitCenter
