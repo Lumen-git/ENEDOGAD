@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,6 +13,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] Image heart1;
     [SerializeField] Image heart2;
     [SerializeField] Image heart3;
+    [SerializeField] private TextMeshProUGUI gameOverText;
+    [SerializeField] private TextMeshProUGUI finalScore;
+    [SerializeField] private GameObject retryButton;
+
     private int score;
     private int maxEnemyHealth = 1;
     private int minEnemyHealth = 1;
@@ -68,6 +74,7 @@ public class GameManager : MonoBehaviour
         if (activeHealth == 0){
             Destroy(player);
             playerDead = true;
+            gameOver();
         }
     }
 
@@ -80,6 +87,17 @@ public class GameManager : MonoBehaviour
 
     public int getScore(){
         return score;
+    }
+
+    private void gameOver(){
+        gameOverText.enabled = true;
+        finalScore.text = "Final Score: " + score;
+        finalScore.enabled = true;
+        retryButton.SetActive(true);
+    }
+
+    public void RestartTheGame(){
+        SceneManager.LoadScene(0);
     }
 
 }
