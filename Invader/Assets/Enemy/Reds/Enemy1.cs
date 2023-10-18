@@ -12,6 +12,8 @@ public class Enemy1 : MonoBehaviour
     private Transform player;
     private Rigidbody enemyRB;
     [SerializeField] int MoveSpeed = 4;
+    [SerializeField] GameObject deathParticles;
+    [SerializeField] AudioClip audioClip;
     //[SerializeField] int MaxDist = 10;
     //[SerializeField] int MinDist = 5;
 
@@ -37,6 +39,9 @@ public class Enemy1 : MonoBehaviour
         if (health <= 0){
             dungeonMaster.IncreaseScore(10 * (startingHealth));
             tryDrop();
+            GameObject tempPar = Instantiate(deathParticles, this.transform.position, Quaternion.identity);
+            Destroy(tempPar, 1);
+            AudioSource.PlayClipAtPoint(audioClip, transform.position);
             Destroy(gameObject);
         }
 

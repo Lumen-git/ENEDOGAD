@@ -124,6 +124,7 @@ MonoBehaviour:
   bobbingSpeed: 2
   bobbingAmount: 0.2
   rotationSpeed: 30
+  audioClip: {fileID: 8300000, guid: 7742604ac311440b5ab3ec58fa50d9e3, type: 3}
 --- !u!1 &6637727567610049898
 GameObject:
   m_ObjectHideFlags: 0

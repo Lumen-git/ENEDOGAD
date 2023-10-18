@@ -14,6 +14,8 @@ public class Enemy2 : MonoBehaviour
 
 
     [SerializeField] GameObject healPowerUp;
+    [SerializeField] GameObject deathParticles;
+    [SerializeField] AudioClip audioClip;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +35,9 @@ public class Enemy2 : MonoBehaviour
         if (health <= 0){
             dungeonMaster.IncreaseScore(25);
             tryDrop();
+            GameObject tempPar = Instantiate(deathParticles, this.transform.position, Quaternion.identity);
+            Destroy(tempPar, 1);
+            AudioSource.PlayClipAtPoint(audioClip, transform.position);
             Destroy(gameObject);
         }
 
@@ -50,9 +55,9 @@ public class Enemy2 : MonoBehaviour
     }
 
     private void UpdateColor(){
-        Color myYellow = new Color(0f, (MoveSpeed)/7f, 0f);
-        GetComponent<Renderer>().material.SetColor("_Color", myYellow);
-        GetComponent<Renderer>().material.SetColor("_EmissionColor", myYellow);
+        Color myGreen = new Color(0f, (MoveSpeed-2)/5f, 0f);
+        GetComponent<Renderer>().material.SetColor("_Color", myGreen);
+        GetComponent<Renderer>().material.SetColor("_EmissionColor", myGreen);
     }
 
     private void tryDrop(){

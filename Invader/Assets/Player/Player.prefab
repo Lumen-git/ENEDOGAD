@@ -188,7 +188,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.9, y: 1.840186, z: 0.9}
+  m_Size: {x: 0.75, y: 1.840186, z: 0.67}
   m_Center: {x: 0, y: 0.029907078, z: 0}
 --- !u!114 &2816440184400684073
 MonoBehaviour:
@@ -209,6 +209,7 @@ MonoBehaviour:
   bulletSpawn: {fileID: 8381551740061357203}
   SpriteZ: {fileID: 6790659773526748875}
   SpriteX: {fileID: 4487572164304436194}
+  audioClip: {fileID: 8300000, guid: 2f4676f3a1a8d4afcb169f8eadbc0793, type: 3}
 --- !u!1 &5323953895247461553
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform bulletSpawn; //Spawn location of bullet (from player prefab)
     [SerializeField] private Animator SpriteZ;
     [SerializeField] private Animator SpriteX;
+    [SerializeField] AudioClip audioClip;
     private GameManager dungeonMaster;
     private Rigidbody rb;
     private Vector3 moveInput;
@@ -62,6 +63,7 @@ public class PlayerController : MonoBehaviour
     private void fire(){
         GameObject newBullet = Instantiate(Bullet, bulletSpawn.position, Quaternion.Euler(90f, rb.transform.eulerAngles.y, 0f));
         Rigidbody BulletRB = newBullet.GetComponent<Rigidbody>();
+        AudioSource.PlayClipAtPoint(audioClip, transform.position);
         BulletRB.velocity = this.transform.forward * BulletSpeed;
     }
 

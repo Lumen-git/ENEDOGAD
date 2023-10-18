@@ -9,6 +9,7 @@ public class Heal : MonoBehaviour
     public float bobbingAmount = 0.2f; // Amount of bobbing motion.
     public float rotationSpeed = 30.0f; // Speed of rotation.
     private Vector3 initialPosition;
+    [SerializeField] AudioClip audioClip;
     private float time = 0f;
     //TEMPLATE VARS
 
@@ -37,6 +38,7 @@ public class Heal : MonoBehaviour
 
     public void powerUpDo(){
         dungeonMaster.healPlayer();
+        AudioSource.PlayClipAtPoint(audioClip, transform.position);
         Destroy(gameObject);
     }
 

@@ -559,7 +559,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetToFollow: {fileID: 8657562}
-  targetOffset: {x: 7, y: 4, z: 0}
+  targetOffset: {x: 4.75, y: 4, z: 0}
 --- !u!81 &73379019
 AudioListener:
   m_ObjectHideFlags: 0
@@ -599,9 +599,9 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 2
-  far clip plane: 50
-  field of view: 60
+  near clip plane: 0.1
+  far clip plane: 500
+  field of view: 72
   orthographic: 0
   orthographic size: 5
   m_Depth: 2
@@ -627,13 +627,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 73379017}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.18301274, y: -0.6830127, z: 0.18301274, w: 0.6830127}
-  m_LocalPosition: {x: 5, y: 4.79, z: -2.5}
+  m_LocalRotation: {x: 0.24936712, y: -0.6616767, z: 0.24936712, w: 0.6616767}
+  m_LocalPosition: {x: 3.74, y: 5.46, z: -2.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 30, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 41.3, y: -90, z: 0}
 --- !u!1001 &82406597
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2805,6 +2805,9 @@ MonoBehaviour:
   gameOverText: {fileID: 1125675455}
   finalScore: {fileID: 1753128686}
   retryButton: {fileID: 87597521}
+  deathParticles: {fileID: 838144185294033245, guid: 21fc1b3b056df455eb690b98b45f15ea, type: 3}
+  audioClip: {fileID: 8300000, guid: 44ae35898d8f141919e73b8703e86ad9, type: 3}
+  audioClipDamage: {fileID: 8300000, guid: 68c3297d021f64d09bd95553431ad5c4, type: 3}
 --- !u!54 &735301104
 Rigidbody:
   m_ObjectHideFlags: 0

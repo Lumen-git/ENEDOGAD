@@ -16,6 +16,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI gameOverText;
     [SerializeField] private TextMeshProUGUI finalScore;
     [SerializeField] private GameObject retryButton;
+    [SerializeField] GameObject deathParticles;
+    [SerializeField] AudioClip audioClip;
+    [SerializeField] AudioClip audioClipDamage;
+    
 
     private int score;
     private int maxEnemyHealth = 1;
@@ -72,9 +76,14 @@ public class GameManager : MonoBehaviour
         healthBar[activeHealth-1].enabled = false;
         activeHealth--;
         if (activeHealth == 0){
+            GameObject tempPar = Instantiate(deathParticles, player.transform.position, Quaternion.identity);
+            Destroy(tempPar, 1);
             Destroy(player);
+            AudioSource.PlayClipAtPoint(audioClip, player.transform.position);
             playerDead = true;
             gameOver();
+        } else {
+            AudioSource.PlayClipAtPoint(audioClipDamage, player.transform.position);
         }
     }
 
