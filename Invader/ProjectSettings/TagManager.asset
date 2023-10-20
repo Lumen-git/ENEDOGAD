@@ -9,6 +9,8 @@ TagManager:
   - Enemy2
   - Heal
   - Glitch
+  - Powerup
+  - HealthUp
   layers:
   - Default
   - TransparentFX

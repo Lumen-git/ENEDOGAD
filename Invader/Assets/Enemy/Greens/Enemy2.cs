@@ -14,6 +14,7 @@ public class Enemy2 : MonoBehaviour
 
 
     [SerializeField] GameObject healPowerUp;
+    [SerializeField] GameObject healthUpPowerUp;
     [SerializeField] GameObject deathParticles;
     [SerializeField] AudioClip audioClip;
 
@@ -61,9 +62,13 @@ public class Enemy2 : MonoBehaviour
     }
 
     private void tryDrop(){
-        int randomNum = Random.Range(0,25);
+        int randomNum = Random.Range(0,20);
         if (randomNum == 5){
             Instantiate(healPowerUp, this.transform.position, Quaternion.identity);
+        }
+        randomNum = Random.Range(0,30);
+        if (randomNum == 5 && dungeonMaster.getMaxHealth() < 6){
+            Instantiate(healthUpPowerUp, this.transform.position, Quaternion.identity);
         }
     }
 

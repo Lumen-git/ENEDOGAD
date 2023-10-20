@@ -17,7 +17,8 @@ public class Enemy1 : MonoBehaviour
     //[SerializeField] int MaxDist = 10;
     //[SerializeField] int MinDist = 5;
 
-    [SerializeField] GameObject healPowerUp;
+[SerializeField] GameObject healPowerUp;
+[SerializeField] GameObject healthUpPowerUp;
 
     // Start is called before the first frame update
     void Start()
@@ -70,6 +71,11 @@ public class Enemy1 : MonoBehaviour
         if (randomNum == 5){
             Instantiate(healPowerUp, this.transform.position, Quaternion.identity);
         }
+        randomNum = Random.Range(0, 35);
+        if (randomNum == 5 && dungeonMaster.getMaxHealth() < 6){
+        Instantiate(healthUpPowerUp, this.transform.position, Quaternion.identity);
+        
+    }
     }
 
 }

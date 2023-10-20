@@ -13,6 +13,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] Image heart1;
     [SerializeField] Image heart2;
     [SerializeField] Image heart3;
+    [SerializeField] Image goldheart1;
+    [SerializeField] Image goldheart2;
+    [SerializeField] Image goldheart3;
     [SerializeField] private TextMeshProUGUI gameOverText;
     [SerializeField] private TextMeshProUGUI finalScore;
     [SerializeField] private GameObject retryButton;
@@ -33,7 +36,7 @@ public class GameManager : MonoBehaviour
     private bool playerDead = false;
 
     void Start(){
-        healthBar = new List<Image> {heart1, heart2, heart3};
+        healthBar = new List<Image> {heart1, heart2, heart3, goldheart1, goldheart2, goldheart3};
         player = GameObject.FindGameObjectWithTag("Player");
         //Debug.Log(gameObject.name);
     }
@@ -107,6 +110,16 @@ public class GameManager : MonoBehaviour
 
     public void RestartTheGame(){
         SceneManager.LoadScene(0);
+    }
+
+    public void increaseMaxHealth(){
+        if (maxHealth < 6){
+            maxHealth++;
+        }
+    }
+
+    public int getMaxHealth(){
+        return maxHealth;
     }
 
 }

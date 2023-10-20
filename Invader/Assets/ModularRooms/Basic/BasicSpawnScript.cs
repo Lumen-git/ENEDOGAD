@@ -45,6 +45,8 @@ public class BasicSpawnScript : MonoBehaviour
                 Instantiate(glitch, spawnPosition, Quaternion.identity);
                 glitchTimer = -1000f;
             }
+        } else {
+            glitchTimer = 0f;
         }
 
     }

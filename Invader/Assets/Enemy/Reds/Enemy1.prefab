@@ -122,8 +122,8 @@ MonoBehaviour:
   MoveSpeed: 4
   deathParticles: {fileID: 838144185294033245, guid: 1080e123ccba34f838ea6e5d2d9bda5a, type: 3}
   audioClip: {fileID: 8300000, guid: 413d77bc694e445faa9b3f32c3526635, type: 3}
-  audioClipDamage: {fileID: 8300000, guid: 5b15e22e7e85f46fd834d536b788a649, type: 3}
   healPowerUp: {fileID: 6479160542689455049, guid: e142dab0914b065468b589169a08d94e, type: 3}
+  healthUpPowerUp: {fileID: 8044282243818534513, guid: 9bafbb07941814de3a03d6cda1778042, type: 3}
 --- !u!54 &3243405954179875163
 Rigidbody:
   m_ObjectHideFlags: 0
