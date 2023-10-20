@@ -10,7 +10,6 @@ public class BasicSpawnScript : MonoBehaviour
     [SerializeField] GameObject enemy2;
     [SerializeField] GameObject glitch;
     private Transform player;
-    private bool proximity = false;
     private GameManager dungeonMaster;
     private float timer = 1.9f; //Start the timer close to spawn to get enemies going faster
     private float glitchTimer = 0f;
@@ -25,25 +24,27 @@ public class BasicSpawnScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        proximity = ((Vector3.Distance(this.transform.position, player.position) < 22.5f)) ? true : false;  //15 activates the spawner halfway into the next room, 22.5 is anywhere in next room
-    
-        if (proximity){
-            //Basic Spawning
-            if ((Vector3.Distance(this.transform.position, player.position) > 7.5f)){}
+        //15 activates the spawner halfway into the next room, 22.5 is anywhere in next room, 7.5 is same room
+
+        //Basic enemies
+        if ((Vector3.Distance(this.transform.position, player.position) < 22.5f) && (Vector3.Distance(this.transform.position, player.position) > 7.5f)){
+            //Basic Spawning 
             timer += Time.deltaTime;
-            glitchTimer += Time.deltaTime;
             if (this.timer >= 2.5){
                 spawn();
             }
         }
-            //Glitch Spawning
+
+
+        //Glitch
+        if (Vector3.Distance(this.transform.position, player.position) < 7.5f){
+            glitchTimer += Time.deltaTime;
             if (glitchTimer >= 15f){
                 float randomAngle = Random.Range(0f, 360f) * Mathf.Deg2Rad;
                 Vector3 spawnPosition = transform.position + new Vector3(Mathf.Cos(randomAngle), 0, Mathf.Sin(randomAngle)) * 15;
                 Instantiate(glitch, spawnPosition, Quaternion.identity);
+                glitchTimer = -1000f;
             }
-        } else {
-            glitchTimer = 0f;
         }
 
     }

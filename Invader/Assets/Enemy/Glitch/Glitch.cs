@@ -12,14 +12,20 @@ public class Glitch : MonoBehaviour
     private Transform player;
     private Rigidbody enemyRB;
 
+    private AudioSource audioSource;
 
+    void Awake(){
+        dungeonMaster = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        enemyRB = this.GetComponent<Rigidbody>();
+        audioSource = this.GetComponent<AudioSource>();
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        dungeonMaster = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-        enemyRB = this.GetComponent<Rigidbody>();
+        audioSource.time = Random.Range(0f, audioSource.clip.length);
+        audioSource.Play();
     }
 
     // Update is called once per frame
