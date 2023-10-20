@@ -13,6 +13,6 @@ public class ColorTest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GetComponent<Renderer>().material.SetColor("_Color", new Color(Random.Range(0f,1f),Random.Range(0f,1f),Random.Range(0f,1f)));
+        GetComponent<Renderer>().material.SetColor("_Color", new Color(((transform.position.x*75)%100)/100f, ((transform.position.z*75)%100)/100f, 0f));
     }
 }

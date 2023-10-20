@@ -103,7 +103,12 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.tag == "Heal"){
             other.gameObject.GetComponent<Heal>().powerUpDo();
         }
+    }
 
+    private void OnTriggerStay(Collider other){
+        if (other.gameObject.tag == "Glitch"){
+            dungeonMaster.damagePlayer();
+        }
     }
 
 }
