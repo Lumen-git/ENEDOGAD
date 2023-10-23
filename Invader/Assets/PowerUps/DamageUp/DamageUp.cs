@@ -12,11 +12,15 @@ public class DamageUp : MonoBehaviour
     private float time = 0f;
     //TEMPLATE VARS
 
+    private GameManager dungeonMaster;
+
     void Start()
     {
         //TEMPLATE START
         initialPosition = transform.position;
         //TEMPLATE START
+
+        dungeonMaster = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
     }
 
 
@@ -32,6 +36,7 @@ public class DamageUp : MonoBehaviour
     }
 
     public void powerUpDo(){
+        dungeonMaster.increaseDamage();
         Destroy(gameObject);
     }
 

@@ -106,6 +106,9 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.tag == "HealthUp"){
             other.gameObject.GetComponent<HealthUp>().powerUpDo();
         }
+        if (other.gameObject.tag == "DamageUp"){
+            other.gameObject.GetComponent<DamageUp>().powerUpDo();
+        }
     }
 
     private void OnTriggerStay(Collider other){

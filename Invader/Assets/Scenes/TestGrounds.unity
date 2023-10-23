@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641228, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1524,71 +1524,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!1001 &1035191381
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 307982436477287824, guid: abe4cc2623ee7ea49a5a23fe6f77e119, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.001
-      objectReference: {fileID: 0}
-    - target: {fileID: 307982436477287824, guid: abe4cc2623ee7ea49a5a23fe6f77e119, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 307982436477287824, guid: abe4cc2623ee7ea49a5a23fe6f77e119, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 307982436477287824, guid: abe4cc2623ee7ea49a5a23fe6f77e119, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -4.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 307982436477287824, guid: abe4cc2623ee7ea49a5a23fe6f77e119, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 307982436477287824, guid: abe4cc2623ee7ea49a5a23fe6f77e119, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 307982436477287824, guid: abe4cc2623ee7ea49a5a23fe6f77e119, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 307982436477287824, guid: abe4cc2623ee7ea49a5a23fe6f77e119, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 307982436477287824, guid: abe4cc2623ee7ea49a5a23fe6f77e119, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 307982436477287824, guid: abe4cc2623ee7ea49a5a23fe6f77e119, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 307982436477287824, guid: abe4cc2623ee7ea49a5a23fe6f77e119, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6346825192760679709, guid: abe4cc2623ee7ea49a5a23fe6f77e119, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: e6295b8575ed7485cac2a0ce38e9539d, type: 2}
-    - target: {fileID: 7471015688062934192, guid: abe4cc2623ee7ea49a5a23fe6f77e119, type: 3}
-      propertyPath: m_Name
-      value: DamageUp
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: abe4cc2623ee7ea49a5a23fe6f77e119, type: 3}
 --- !u!1 &1159023451
 GameObject:
   m_ObjectHideFlags: 0
@@ -6311,6 +6246,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2530729311981128851}
   m_LocalEulerAnglesHint: {x: -90, y: 180, z: 0}
+--- !u!1001 &5785321759898427724
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1882311519787557145, guid: 6c7374cfff8b6d845b25ae5ab80b9093, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1882311519787557145, guid: 6c7374cfff8b6d845b25ae5ab80b9093, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1882311519787557145, guid: 6c7374cfff8b6d845b25ae5ab80b9093, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1882311519787557145, guid: 6c7374cfff8b6d845b25ae5ab80b9093, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1882311519787557145, guid: 6c7374cfff8b6d845b25ae5ab80b9093, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1882311519787557145, guid: 6c7374cfff8b6d845b25ae5ab80b9093, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1882311519787557145, guid: 6c7374cfff8b6d845b25ae5ab80b9093, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1882311519787557145, guid: 6c7374cfff8b6d845b25ae5ab80b9093, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1882311519787557145, guid: 6c7374cfff8b6d845b25ae5ab80b9093, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1882311519787557145, guid: 6c7374cfff8b6d845b25ae5ab80b9093, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5077350504235412089, guid: 6c7374cfff8b6d845b25ae5ab80b9093, type: 3}
+      propertyPath: m_Name
+      value: DamageUp
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6c7374cfff8b6d845b25ae5ab80b9093, type: 3}
 --- !u!23 &5795132315401022875
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7949,7 +7941,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: HealthUp
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4160962356943325430, guid: 9bafbb07941814de3a03d6cda1778042, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -8213,4 +8206,4 @@ SceneRoots:
   - {fileID: 50879570432599249}
   - {fileID: 5359732206979769121}
   - {fileID: 8320430555647748547}
-  - {fileID: 1035191381}
+  - {fileID: 5785321759898427724}

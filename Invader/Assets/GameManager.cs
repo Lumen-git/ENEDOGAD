@@ -29,6 +29,8 @@ public class GameManager : MonoBehaviour
     private int minEnemyHealth = 1;
     private float timer;
 
+    private int damage = 1;
+
     private int maxHealth = 3;
     private int activeHealth = 3;
     private List<Image> healthBar;
@@ -122,4 +124,13 @@ public class GameManager : MonoBehaviour
         return maxHealth;
     }
 
+    public void increaseDamage(){
+        if (damage < 3){
+            damage++;
+        }
+    }
+
+    public int getDamage(){
+        return damage;
+    }
 }
