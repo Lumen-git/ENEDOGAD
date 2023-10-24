@@ -12,6 +12,12 @@ TagManager:
   - Powerup
   - HealthUp
   - DamageUp
+  - ProcGenTrigger
+  - UnitCenter
+  - SNX
+  - SN-X
+  - SNZ
+  - SN-Z
   layers:
   - Default
   - TransparentFX
