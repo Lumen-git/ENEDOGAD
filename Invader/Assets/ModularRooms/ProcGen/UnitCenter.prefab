@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6211170250341616122}
   - component: {fileID: 6798010252187956021}
-  m_Layer: 0
-  m_Name: SpawnNodeX
+  m_Layer: 7
+  m_Name: SpawnNode
   m_TagString: SNX
   m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -42,12 +42,12 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 119
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -66,10 +66,11 @@ GameObject:
   - component: {fileID: 2008362550105591836}
   - component: {fileID: 2323820318193941990}
   - component: {fileID: 5129531992070809972}
-  m_Layer: 0
+  - component: {fileID: 2001865835806291623}
+  m_Layer: 7
   m_Name: UnitCenter
   m_TagString: UnitCenter
-  m_Icon: {fileID: 7422848464349959988, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -119,6 +120,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0a8c3c8357bd44689d634fa9aa8dde5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &2001865835806291623
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2448550821186664284}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 384
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 119
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 28, y: 5, z: 28}
+  m_Center: {x: 0, y: 2.5, z: 0}
 --- !u!1 &5151111967342994519
 GameObject:
   m_ObjectHideFlags: 0
@@ -129,10 +151,10 @@ GameObject:
   m_Component:
   - component: {fileID: 8851113514725707450}
   - component: {fileID: 6993832160782979962}
-  m_Layer: 0
-  m_Name: SpawnNode-X
-  m_TagString: SN-X
-  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+  m_Layer: 7
+  m_Name: SpawnNode
+  m_TagString: SNX
+  m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -161,12 +183,12 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 119
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -184,9 +206,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7798922599654966897}
   - component: {fileID: 8028570546852073095}
-  m_Layer: 0
-  m_Name: SpawnNodeZ
-  m_TagString: SNZ
+  m_Layer: 7
+  m_Name: SpawnNode
+  m_TagString: SNX
   m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -216,12 +238,12 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 119
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -239,9 +261,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5946728090288544941}
   - component: {fileID: 1329942775348166943}
-  m_Layer: 0
-  m_Name: SpawnNode-Z
-  m_TagString: SN-Z
+  m_Layer: 7
+  m_Name: SpawnNode
+  m_TagString: SNX
   m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -271,12 +293,12 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 119
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2

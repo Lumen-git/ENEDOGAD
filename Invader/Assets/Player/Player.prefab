@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8381551740061357203}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LaserSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 236920820393371259}
   - component: {fileID: 7987246268816003120}
   - component: {fileID: 2816440184400684073}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -221,7 +221,7 @@ GameObject:
   - component: {fileID: 675474582863586211}
   - component: {fileID: 1641241892936379317}
   - component: {fileID: 6790659773526748875}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SpriteZ
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -327,7 +327,7 @@ GameObject:
   - component: {fileID: 8509392487264499227}
   - component: {fileID: 8126436978545029019}
   - component: {fileID: 4487572164304436194}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SpriteX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
