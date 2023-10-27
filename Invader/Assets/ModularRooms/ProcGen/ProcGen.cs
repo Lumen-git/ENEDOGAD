@@ -11,6 +11,21 @@ public class ProcGen : MonoBehaviour
     private float cooldownTime = 1f; // Cooldown time in seconds
     private bool isOnCooldown = false;
 
+    //ROOMS
+    private static List<List<string>> grays = new List<List<string>>{
+        new List<string> { "Grays/LinearHall", "1010"},
+        new List<string> { "Grays/LinearRoom", "1010"},
+        new List<string> { "Grays/QuadHall", "1111"},
+        new List<string> { "Grays/QuadRoom", "1111"},
+        new List<string> { "Grays/T-Hall", "1101"},
+        new List<string> { "Grays/T-Room", "1101"},
+        new List<string> { "Grays/TurnHall", "1100"},
+        new List<string> { "Grays/TurnRoom", "1100"},
+    };
+
+    //Set default room type
+    private List<List<string>> active = grays;
+
     void Start()
     {
         
@@ -36,7 +51,27 @@ public class ProcGen : MonoBehaviour
             }
 
             foreach (Transform child in children){  //For each child, which are the spawn nodes
-                Debug.Log("Child name: " + child.name);
+                //TODO
+                //If North -> Spawn North
+                //If South -> Spawn South
+                //If East -> Spawn East
+                //If West -> Spawn West
+                // 0 = N, 1 = E, 2 = S, 3 = W
+                int direction = getDir(child);
+                bool open = CanSpawn(child);
+                
+                if (direction == 0 && open){
+                    spawnNorth(child);
+                }
+                else if (direction == 1 && open){
+                    spawnEast(child);
+                }
+                else if (direction == 2 && open){
+                    spawnSouth(child);
+                }
+                else if (direction == 3 && open){
+                    spawnWest(child);
+                }
             }
 
         }}
@@ -48,5 +83,49 @@ public class ProcGen : MonoBehaviour
         yield return new WaitForSeconds(cooldownTime);
         isOnCooldown = false;
     }
+
+    private int getDir(Transform other){
+        Vector3 direction = other.position - transform.position;
+
+        if (direction.z > 0){return 0;}//North
+        if (direction.x > 0){return 1;}//East
+        if (direction.z < 0){return 2;}//South
+        if (direction.x < 0){return 3;}//West
+        return -1;
+    }
+
+    private void spawnNorth(Transform node){
+        List<string> roomName = active[Random.Range(0, active.Count)];
+        GameObject toLoad = Resources.Load<GameObject>(roomName[0]);
+        Instantiate(toLoad, node.position, Quaternion.identity);
+    }
+
+    private void spawnEast(Transform node){
+        List<string> roomName = active[Random.Range(0, active.Count)];
+        GameObject toLoad = Resources.Load<GameObject>(roomName[0]);
+        Instantiate(toLoad, node.position, Quaternion.identity);
+    }
+
+    private void spawnSouth(Transform node){
+        List<string> roomName = active[Random.Range(0, active.Count)];
+        GameObject toLoad = Resources.Load<GameObject>(roomName[0]);
+        Instantiate(toLoad, node.position, Quaternion.identity);
+    }
+
+    private void spawnWest(Transform node){
+        List<string> roomName = active[Random.Range(0, active.Count)];
+        GameObject toLoad = Resources.Load<GameObject>(roomName[0]);
+        Instantiate(toLoad, node.position, Quaternion.identity);
+    }
+
+    public bool CanSpawn(Transform node){
+        Vector3 rayOrigin = node.position;
+        Vector3 rayDirection = Vector3.up;
+        if (Physics.Raycast(rayOrigin, rayDirection, 3f)){
+            return false;
+        }
+        return true;
+    }
+    
 
 }
