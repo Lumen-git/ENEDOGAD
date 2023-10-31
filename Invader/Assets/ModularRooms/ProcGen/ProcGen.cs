@@ -36,7 +36,7 @@ public class ProcGen : MonoBehaviour
 
     void Update()
     {
-        if (Vector3.Distance(this.transform.position, player.position) < 30f){  //15 activates the spawner halfway into the next room, 22.5 is anywhere in next room
+        if (Vector3.Distance(this.transform.position, player.position) < 25f){  //15 activates the spawner halfway into the next room, 22.5 is anywhere in next room
             proximity = true;
         } else {
             proximity = false;
@@ -61,12 +61,6 @@ public class ProcGen : MonoBehaviour
             }
 
             foreach (Transform child in children){  //For each child, which are the spawn nodes
-                //TODO
-                //If North -> Spawn North
-                //If South -> Spawn South
-                //If East -> Spawn East
-                //If West -> Spawn West
-                // 0 = N, 1 = E, 2 = S, 3 = W
                 int direction = getDir(child);
                 bool open = CanSpawn(child);
                 
@@ -95,7 +89,7 @@ public class ProcGen : MonoBehaviour
     }
 
     private int getDir(Transform other){
-        Vector3 direction = other.localPosition - transform.position;
+        Vector3 direction = other.position - transform.position;
 
         if (direction.z > 0){return 0;}//North
         if (direction.x > 0){return 1;}//East
@@ -117,12 +111,12 @@ public class ProcGen : MonoBehaviour
         validRotations = new List<float>(); //set validRotations to an empty list
         exits = roomName[1];    //set exits to the set of strings that represent valid exits 
 
-        if (exits[0] == '1') {validRotations.Add(0f);}    //Assign proper valid rotations to validRotations
-        if (exits[1] == '1') {validRotations.Add(-90f);}
-        if (exits[2] == '1') {validRotations.Add(180f);}
-        if (exits[3] == '1') {validRotations.Add(90f);}
+        if (exits[0] == '1') {validRotations.Add(180f);}    //Assign proper valid rotations to validRotations
+        if (exits[1] == '1') {validRotations.Add(90f);}
+        if (exits[2] == '1') {validRotations.Add(0f);}
+        if (exits[3] == '1') {validRotations.Add(-90f);}
 
-        Debug.Log(validRotations.Count);
+        //Debug.Log(validRotations.Count);
 
         float chosenRotation = validRotations[Random.Range(0, validRotations.Count)];
 
@@ -138,10 +132,10 @@ public class ProcGen : MonoBehaviour
         validRotations = new List<float>();
         exits = roomName[1];
 
-        if (exits[0] == '1') {validRotations.Add(90f);}
-        if (exits[1] == '1') {validRotations.Add(0f);}
+        if (exits[0] == '1') {validRotations.Add(-90f);}
+        if (exits[1] == '1') {validRotations.Add(180f);}
         if (exits[2] == '1') {validRotations.Add(90f);}
-        if (exits[3] == '1') {validRotations.Add(180f);}
+        if (exits[3] == '1') {validRotations.Add(0f);}
 
         float chosenRotation = validRotations[Random.Range(0, validRotations.Count)];
 
