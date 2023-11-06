@@ -14,7 +14,7 @@ public class ProcGen : MonoBehaviour
     private bool proximity = false;
 
     //ROOMS
-    private static List<List<string>> grays = new List<List<string>>{
+    /* private static List<List<string>> grays = new List<List<string>>{
         new List<string> { "Grays/LinearHall", "1010"},
         new List<string> { "Grays/LinearRoom", "1010"},
         new List<string> { "Grays/QuadHall", "1111"},
@@ -23,10 +23,17 @@ public class ProcGen : MonoBehaviour
         new List<string> { "Grays/T-Room", "1101"},
         new List<string> { "Grays/TurnHall", "1100"},
         new List<string> { "Grays/TurnRoom", "1100"},
-    };
+    }; */
 
     //Set default room type
-    private List<List<string>> active = grays;
+    // private List<List<string>> active = grays;
+
+    private string[] folders = {
+        "Grays/North",
+        "Grays/East",
+        "Grays/South",
+        "Grays/West"
+    };
 
     void Start()
     {
@@ -89,12 +96,25 @@ public class ProcGen : MonoBehaviour
     }
 
     private int getDir(Transform other){
-        Vector3 direction = other.position - transform.position;
+        /*Vector3 direction = other.position - transform.position;
 
         if (direction.z > 0){return 0;}//North
         if (direction.x > 0){return 1;}//East
         if (direction.z < 0){return 2;}//South
         if (direction.x < 0){return 3;}//West
+        return -1;
+        */
+
+        if (other.position.z == transform.position.z){
+            //check if east or west
+            if (other.position.x > transform.position.x){return 1;}
+            if (other.position.x < transform.position.x){return 3;}
+        }
+        if (other.position.x == transform.position.x){
+            //check if north or south
+            if (other.position.z > transform.position.z){return 0;}
+            if (other.position.z < transform.position.z){return 2;}
+        }
         return -1;
     }
 
@@ -102,82 +122,35 @@ public class ProcGen : MonoBehaviour
     private string exits;
 
     private void spawnNorth(Transform node){
-
-        List<string> roomName = active[Random.Range(0, active.Count)]; //Pick a random room from the active set
-        GameObject toLoad = Resources.Load<GameObject>(roomName[0]);    //Load that model
-
-        //If room is spawning north, it needs a southern exit
-        exits = ""; //Set exits to an empty string
-        validRotations = new List<float>(); //set validRotations to an empty list
-        exits = roomName[1];    //set exits to the set of strings that represent valid exits 
-
-        if (exits[0] == '1') {validRotations.Add(180f);}    //Assign proper valid rotations to validRotations
-        if (exits[1] == '1') {validRotations.Add(90f);}
-        if (exits[2] == '1') {validRotations.Add(0f);}
-        if (exits[3] == '1') {validRotations.Add(-90f);}
-
-        //Debug.Log(validRotations.Count);
-
-        float chosenRotation = validRotations[Random.Range(0, validRotations.Count)];
-
-        Instantiate(toLoad, node.position, Quaternion.Euler(0f, chosenRotation, 0f));
+        node.rotation = Quaternion.identity;
+        Object[] prefabs = Resources.LoadAll(folders[0], typeof(GameObject));
+        GameObject randomPrefab = (GameObject)prefabs[Random.Range(0, prefabs.Length)];
+        Instantiate(randomPrefab, node.position, randomPrefab.transform.rotation);
+        Resources.UnloadUnusedAssets();
     }
 
     private void spawnEast(Transform node){
-        List<string> roomName = active[Random.Range(0, active.Count)];
-        GameObject toLoad = Resources.Load<GameObject>(roomName[0]);
-
-        //If room is spawning east, it needs a western exit
-        exits = "";
-        validRotations = new List<float>();
-        exits = roomName[1];
-
-        if (exits[0] == '1') {validRotations.Add(-90f);}
-        if (exits[1] == '1') {validRotations.Add(180f);}
-        if (exits[2] == '1') {validRotations.Add(90f);}
-        if (exits[3] == '1') {validRotations.Add(0f);}
-
-        float chosenRotation = validRotations[Random.Range(0, validRotations.Count)];
-
-        Instantiate(toLoad, node.position, Quaternion.Euler(0f, chosenRotation, 0f));
+        node.rotation = Quaternion.identity;
+        Object[] prefabs = Resources.LoadAll(folders[1], typeof(GameObject));
+        GameObject randomPrefab = (GameObject)prefabs[Random.Range(0, prefabs.Length)];
+        Instantiate(randomPrefab, node.position, randomPrefab.transform.rotation);
+        Resources.UnloadUnusedAssets();
     }
 
     private void spawnSouth(Transform node){
-        List<string> roomName = active[Random.Range(0, active.Count)];
-        GameObject toLoad = Resources.Load<GameObject>(roomName[0]);
-
-        //If room is spawning south, it needs a northern exit
-        exits = "";
-        validRotations = new List<float>();
-        exits = roomName[1];
-
-        if (exits[0] == '1') {validRotations.Add(180f);}
-        if (exits[1] == '1') {validRotations.Add(90f);}
-        if (exits[2] == '1') {validRotations.Add(0f);}
-        if (exits[3] == '1') {validRotations.Add(-90f);}
-
-        float chosenRotation = validRotations[Random.Range(0, validRotations.Count)];
-
-        Instantiate(toLoad, node.position, Quaternion.Euler(0f, chosenRotation, 0f));
+        node.rotation = Quaternion.identity;
+        Object[] prefabs = Resources.LoadAll(folders[2], typeof(GameObject));
+        GameObject randomPrefab = (GameObject)prefabs[Random.Range(0, prefabs.Length)];
+        Instantiate(randomPrefab, node.position, randomPrefab.transform.rotation);
+        Resources.UnloadUnusedAssets();
     }
 
     private void spawnWest(Transform node){
-        List<string> roomName = active[Random.Range(0, active.Count)];
-        GameObject toLoad = Resources.Load<GameObject>(roomName[0]);
-
-        //if room is spawning west, it needs an eastern exit
-        exits = "";
-        validRotations = new List<float>();
-        exits = roomName[1];
-
-        if (exits[0] == '1') {validRotations.Add(-90f);}
-        if (exits[1] == '1') {validRotations.Add(180f);}
-        if (exits[2] == '1') {validRotations.Add(90f);}
-        if (exits[3] == '1') {validRotations.Add(0f);}
-
-        float chosenRotation = validRotations[Random.Range(0, validRotations.Count)];
-
-        Instantiate(toLoad, node.position, Quaternion.Euler(0f, chosenRotation, 0f));
+        node.rotation = Quaternion.identity;
+        Object[] prefabs = Resources.LoadAll(folders[3], typeof(GameObject));
+        GameObject randomPrefab = (GameObject)prefabs[Random.Range(0, prefabs.Length)];
+        Instantiate(randomPrefab, node.position, randomPrefab.transform.rotation);
+        Resources.UnloadUnusedAssets();
     }
 
     public bool CanSpawn(Transform node){
