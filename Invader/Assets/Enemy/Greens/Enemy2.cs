@@ -32,7 +32,6 @@ public class Enemy2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {   
-        if (transform.position.y < .75f){Destroy(gameObject);}
         //Health Updates
         UpdateColor();
         if (health <= 0){
@@ -53,7 +52,7 @@ public class Enemy2 : MonoBehaviour
     }
 
     public void Damage(){
-        health = health - dungeonMaster.getDamage();
+        health -= dungeonMaster.getDamage();
         UpdateColor();
     }
 
