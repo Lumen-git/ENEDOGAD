@@ -74,14 +74,11 @@ public class PlayerController : MonoBehaviour
         Vector3 moveVelocity;
 
         // Run
-        /* if (Input.GetKey(KeyCode.LeftShift))
-        {
+        if (Input.GetKey(KeyCode.LeftShift)){
             moveVelocity = moveDirection * sprintSpeed;
-        }
-        else
-        { */
+        } else {
         moveVelocity = moveDirection * moveSpeed;
-        
+        }
         
         rb.velocity = new Vector3(moveVelocity.x, rb.velocity.y, moveVelocity.z);
         if (moveInput.sqrMagnitude != 0){

@@ -18,6 +18,7 @@ TagManager:
   - SN-X
   - SNZ
   - SN-Z
+  - Laser
   layers:
   - Default
   - TransparentFX
