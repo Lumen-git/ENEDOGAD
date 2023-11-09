@@ -19,6 +19,7 @@ TagManager:
   - SNZ
   - SN-Z
   - Laser
+  - PacPellet
   layers:
   - Default
   - TransparentFX
