@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject deathParticles;
     [SerializeField] AudioClip audioClip;
     [SerializeField] AudioClip audioClipDamage;
+    [SerializeField] Transform PearLocation;
+    [SerializeField] GameObject thePear;
     
 
     private int score;
@@ -36,6 +38,7 @@ public class GameManager : MonoBehaviour
     private List<Image> healthBar;
     private GameObject player;
     private bool playerDead = false;
+    private int pellets = 0;
 
     void Start(){
         healthBar = new List<Image> {heart1, heart2, heart3, goldheart1, goldheart2, goldheart3};
@@ -132,5 +135,13 @@ public class GameManager : MonoBehaviour
 
     public int getDamage(){
         return damage;
+    }
+
+    public void doPellet(){
+        score += 10;
+        pellets++;
+        if (pellets >= 243){
+            Instantiate(thePear, PearLocation.position, Quaternion.identity);
+        }
     }
 }
