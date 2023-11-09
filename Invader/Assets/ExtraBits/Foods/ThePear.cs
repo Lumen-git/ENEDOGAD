@@ -10,6 +10,7 @@ public class ThePear : MonoBehaviour
     public float rotationSpeed = 30.0f; // Speed of rotation.
     private Vector3 initialPosition;
     private float time = 0f;
+    [SerializeField] GameObject glitch;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +33,11 @@ public class ThePear : MonoBehaviour
         if (other.gameObject.tag == "Player"){
             gameObject.GetComponent<Collider>().enabled = false;
             dungeonMaster.IncreaseScore(7500);
+
+            float randomAngle = Random.Range(0f, 360f) * Mathf.Deg2Rad;
+            Vector3 spawnPosition = transform.position + new Vector3(Mathf.Cos(randomAngle), 0, Mathf.Sin(randomAngle)) * 15;
+            Instantiate(glitch, spawnPosition, Quaternion.identity);
+
             Destroy(gameObject);
         }
     }

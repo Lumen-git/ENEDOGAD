@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] AudioClip audioClipDamage;
     [SerializeField] Transform PearLocation;
     [SerializeField] GameObject thePear;
+    private bool peared = false;
     
 
     private int score;
@@ -114,7 +115,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void RestartTheGame(){
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
     public void increaseMaxHealth(){
@@ -140,8 +141,10 @@ public class GameManager : MonoBehaviour
     public void doPellet(){
         score += 10;
         pellets++;
-        if (pellets >= 243){
-            Instantiate(thePear, PearLocation.position, Quaternion.identity);
+        if (pellets >= 243 && !peared){
+            peared = true;
+            GameObject theRealPear = Instantiate(thePear, PearLocation.position, Quaternion.identity);
+            theRealPear.transform.eulerAngles = new Vector3(70f,0f,0f);
         }
     }
 }
