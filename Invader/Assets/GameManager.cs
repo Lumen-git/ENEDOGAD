@@ -147,4 +147,8 @@ public class GameManager : MonoBehaviour
             theRealPear.transform.eulerAngles = new Vector3(70f,0f,0f);
         }
     }
+
+    public bool isPlayerDead(){
+        return playerDead;
+    }
 }

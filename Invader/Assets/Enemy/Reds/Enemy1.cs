@@ -48,9 +48,10 @@ public class Enemy1 : MonoBehaviour
         }
 
         //super simple movement
-        transform.LookAt(player);
-        //transform.position += transform.forward * MoveSpeed * Time.deltaTime;
-        enemyRB.velocity = this.transform.forward * MoveSpeed;
+        if (!dungeonMaster.isPlayerDead()){
+            transform.LookAt(player);
+            enemyRB.velocity = this.transform.forward * MoveSpeed;
+        }
 
         bool proximity = Vector3.Distance(transform.position, player.position) > 40f;
         if (proximity) Destroy(gameObject);

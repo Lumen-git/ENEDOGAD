@@ -1,25 +1,29 @@
 CREDITS:
 Portal Cube model - https://sketchfab.com/3d-models/companion-cube-47502a51b211475b9750b04b4b1dffc4#download
 Square Font (score, game over)- https://www.dafont.com/squarefont.font?l[]=10&l[]=1&text=Score%3A+1234567890
-Arcade Classic font (main menu) - https://www.dafont.com/arcade-classic-2.font
+Arcade Classic font (main menu, the end is never...) - https://www.dafont.com/arcade-classic-2.font
 Astro Font (main menu) - https://www.dafont.com/astro.font?text=dimension&l[]=10&l[]=1&back=theme
 True Crimes font (main menu) - https://www.dafont.com/true-crimes.font?l[]=10&l[]=1
 Sound Effects - https://opengameart.org/content/512-sound-effects-8-bit-style
 That random VHS Store model - https://elbolilloduro.itch.io/vhs-shop
 The banana, microwave meal, and pear model - https://elbolilloduro.itch.io/paquete-de-modelos-psx-3
 
-ProBuilder package from Unity package index
-
 "Someone shot the food" audio clip from Gauntlet (1985, Atari)
-
 "Glitch" audio from the WTR21 French numbers station: https://www.numbers-stations.com/various/v19-wtr21/
-
-Flashing light pattern in "void rooms" based on the infamous Quake/Source flashing light
 
 Player Sprite adapted from Bezerk for the Atari 2600, and inspired by Bit.Trip
 Heal Sprite inspired by Doom (1993) "stim pack" texture
+W1-W10 based on SCP field and Wanderer symbols - https://scp-wiki.wikidot.com/scp-field-codes & https://scp-wiki.wikidot.com/wanderer-symbols
+Flashing light pattern in "void rooms" based on the infamous Quake/Source flashing light
 
-All other bits made by me  
+"Do not go gentle into that good night" quote by poem of the same name by Dylan Thomas, 1951
+"The cake is a lie" quote from Portal
+Lambda logo from Half Life 2
+
+"ToDo" Tool by Cyanilux - https://github.com/Cyanilux/ToDo
+ProBuilder package from Unity package index
+
+All other graphics made by me  
 
 /\ /\ In Game
 

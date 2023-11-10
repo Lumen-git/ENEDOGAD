@@ -16,9 +16,9 @@ public class MenuCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.forward * movementSpeed);
+        transform.Translate(Vector3.forward * movementSpeed * Time.deltaTime);
         if (transform.position.z >= 155.5f){
-            transform.position = new Vector3(0,2.5f,0);
+            transform.position = new Vector3(0,2.5f,-8.75f);
         }
     }
 }
