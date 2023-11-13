@@ -25,70 +25,41 @@ public class PosterSpawningScript : MonoBehaviour
 
         if (largePosterProbability == 1){
 
-            MeshRenderer meshRenderer = posterLarge.GetComponent<MeshRenderer>();
+            SpriteRenderer posterTarget = posterLarge.GetComponent<SpriteRenderer>();
+            Object[] posterList;
 
             if (largePosterKind <= 4){
-
-                Object[] posterList = Resources.LoadAll(folders[3], typeof(Texture2D));
-                Texture2D randomTex = (Texture2D)posterList[Random.Range(0, posterList.Length)];
-
-                Material material = new Material(Shader.Find("Standard"));
-                material.SetFloat("_Mode", 1);
-                material.SetFloat("_Cutoff", 0.5f);
-
-                material.mainTexture = randomTex;
-                meshRenderer.material = material;
-
+                posterList = Resources.LoadAll(folders[3], typeof(Texture2D));
             } else if (largePosterKind <= 8){
-
-                Object[] posterList = Resources.LoadAll(folders[2], typeof(Texture2D));
-                Texture2D randomTex = (Texture2D)posterList[Random.Range(0, posterList.Length)];
-
-                Material material = new Material(Shader.Find("Standard"));
-                material.SetFloat("_Mode", 1);
-                material.SetFloat("_Cutoff", 0.5f);
-
+                posterList = Resources.LoadAll(folders[2], typeof(Texture2D));
             } else {
-
-                Object[] posterList = Resources.LoadAll(folders[1], typeof(Texture2D));
-                Texture2D randomTex = (Texture2D)posterList[Random.Range(0, posterList.Length)];
-
-                Material material = new Material(Shader.Find("Standard"));
-                material.SetFloat("_Mode", 1);
-                material.SetFloat("_Cutoff", 0.5f);
-
-
+                posterList = Resources.LoadAll(folders[1], typeof(Texture2D));
             }
-            Resources.UnloadUnusedAssets();
 
+            Texture2D randomTex = (Texture2D)posterList[Random.Range(0, posterList.Length)];
+
+            posterTarget.sprite= Sprite.Create(randomTex, new Rect(0.0f, 0.0f, randomTex.width, randomTex.height), new Vector2(0.5f, 0.5f));
+
+            Resources.UnloadUnusedAssets();
         }
 
         if (smallPosterProbability == 1){
 
             Object[] posterList = Resources.LoadAll(folders[0], typeof(Texture2D));
             Texture2D randomTex = (Texture2D)posterList[Random.Range(0, posterList.Length)];
+            SpriteRenderer posterTarget;
 
             if (smallPosterSide == 0){
 
-                MeshRenderer meshRenderer = posterSmall1.GetComponent<MeshRenderer>();
-
-                Material material = new Material(Shader.Find("Standard"));
-                material.SetInt("_Mode", 1);
-                material.SetFloat("_Cutout", 0.5f);
-                material.mainTexture = randomTex;
-                meshRenderer.material = material;
+                posterTarget = posterSmall1.GetComponent<SpriteRenderer>();
 
             } else {
 
-                MeshRenderer meshRenderer = posterSmall2.GetComponent<MeshRenderer>();
-
-                Material material = new Material(Shader.Find("Standard"));
-                material.SetInt("_Mode", 1);
-                material.SetFloat("_Cutout", 0.5f);
-                material.mainTexture = randomTex;
-                meshRenderer.material = material;
+                posterTarget = posterSmall2.GetComponent<SpriteRenderer>();
 
             }
+
+            posterTarget.sprite= Sprite.Create(randomTex, new Rect(0.0f, 0.0f, randomTex.width, randomTex.height), new Vector2(0.5f, 0.5f));
 
             Resources.UnloadUnusedAssets();
         }  

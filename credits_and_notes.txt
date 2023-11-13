@@ -15,11 +15,8 @@ Player Sprite adapted from Bezerk for the Atari 2600, and inspired by Bit.Trip
 Heal Sprite inspired by Doom (1993) "stim pack" texture
 W1-W10 based on SCP field and Wanderer symbols - https://scp-wiki.wikidot.com/scp-field-codes & https://scp-wiki.wikidot.com/wanderer-symbols
 Flashing light pattern in "void rooms" based on the infamous Quake/Source flashing light
-Neon markings based on the markings descripbed in House of Leaves by Mark Z. Danielewski
 
 "Do not go gentle into that good night" quote by poem of the same name by Dylan Thomas, 1951
-"The cake is a lie" quote from Portal
-Lambda logo from Half Life 2
 
 "ToDo" Tool by Cyanilux - https://github.com/Cyanilux/ToDo
 ProBuilder package from Unity package index
