@@ -6,6 +6,7 @@ public class DontShootFood : MonoBehaviour
 {
 
     [SerializeField] AudioClip clip;
+    [SerializeField] Camera gameCam;
     private AudioSource audioSource;
 
     public float bobbingSpeed = 2.0f;  // Speed of bobbing motion.
@@ -18,7 +19,7 @@ public class DontShootFood : MonoBehaviour
     void Start()
     {
         initialPosition = transform.position;
-        audioSource = this.GetComponent<AudioSource>();
+        audioSource = gameCam.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -33,7 +34,7 @@ public class DontShootFood : MonoBehaviour
 
     void OnTriggerEnter(Collider other){
         if (other.gameObject.tag == "Laser"){
-            AudioSource.PlayClipAtPoint(clip, GameObject.FindGameObjectsWithTag("MainCamera")[0].transform.position);
+            audioSource.PlayOneShot(clip);
             Destroy(gameObject);
         }
     }

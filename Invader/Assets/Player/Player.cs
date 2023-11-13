@@ -41,19 +41,19 @@ public class PlayerController : MonoBehaviour
         //rotation.y += mouseX * rotationSpeed * Time.deltaTime;
         //transform.localRotation = Quaternion.Euler(rotation);
 
-        if (Input.GetKeyDown(KeyCode.UpArrow)){
+        if (Input.GetKeyDown(KeyCode.UpArrow) && !dungeonMaster.isPaused){
             rb.transform.eulerAngles = new Vector3(0f, 270f, 0f);
             fire();
         }
-        if (Input.GetKeyDown(KeyCode.DownArrow)){
+        if (Input.GetKeyDown(KeyCode.DownArrow) && !dungeonMaster.isPaused){
             rb.transform.eulerAngles = new Vector3(0f, 90f, 0f);
             fire();
         }
-        if (Input.GetKeyDown(KeyCode.LeftArrow)){
+        if (Input.GetKeyDown(KeyCode.LeftArrow) && !dungeonMaster.isPaused){
             rb.transform.eulerAngles = new Vector3(0f, 180f, 0f);
             fire();
         }
-        if (Input.GetKeyDown(KeyCode.RightArrow)){
+        if (Input.GetKeyDown(KeyCode.RightArrow) && !dungeonMaster.isPaused){
             rb.transform.eulerAngles = new Vector3(0f, 0f, 0f);
             fire();
         }

@@ -24,6 +24,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] AudioClip audioClipDamage;
     [SerializeField] Transform PearLocation;
     [SerializeField] GameObject thePear;
+    [SerializeField] GameObject exitButton;
+    public bool isPaused = false;
     private bool peared = false;
     
 
@@ -58,6 +60,16 @@ public class GameManager : MonoBehaviour
         }
 
         scoreText.text = "Score: " + score;
+
+        if (Input.GetKeyDown(KeyCode.Escape)){
+            exitButton.SetActive(!isPaused);
+            if (isPaused){
+                Time.timeScale = 1;
+            } else {
+                Time.timeScale = 0;
+            }
+            isPaused = !isPaused;
+        }
     }
 
     public int RequestHealth(){
@@ -115,7 +127,13 @@ public class GameManager : MonoBehaviour
     }
 
     public void RestartTheGame(){
+        if (isPaused){Time.timeScale = 1;}
         SceneManager.LoadScene(1);
+    }
+
+    public void mainMenu(){
+        Time.timeScale = 1;
+        SceneManager.LoadScene(0);
     }
 
     public void increaseMaxHealth(){
@@ -151,4 +169,9 @@ public class GameManager : MonoBehaviour
     public bool isPlayerDead(){
         return playerDead;
     }
+
+    public void runForIt(){
+        Application.Quit();
+    }
+
 }
