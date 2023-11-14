@@ -91,7 +91,7 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other){
+    private void OnCollisionEnter(Collision other){
 
         if (other.gameObject.tag == "Enemy1" || other.gameObject.tag == "Enemy2"){
             dungeonMaster.damagePlayer();
@@ -108,7 +108,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay(Collider other){
+    private void OnCollisionStay(Collision other){
         if (other.gameObject.tag == "Glitch"){
             dungeonMaster.damagePlayer();
         }
