@@ -1159,7 +1159,7 @@ GameObject:
   - component: {fileID: 2530729313523102299}
   m_Layer: 7
   m_Name: QuadRoom 1
-  m_TagString: Untagged
+  m_TagString: UnitCenter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1209,9 +1209,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8660177799372418500}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: UnitCenter
-  m_TagString: Untagged
+  m_TagString: UnitCenter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1244,9 +1244,9 @@ GameObject:
   - component: {fileID: 2477947736103584549}
   - component: {fileID: 6061352091886277126}
   - component: {fileID: 4677290878059655736}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: UnitCenter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1364,7 +1364,7 @@ GameObject:
   - component: {fileID: 5411685146352660479}
   m_Layer: 7
   m_Name: Cube (2)
-  m_TagString: Untagged
+  m_TagString: UnitCenter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

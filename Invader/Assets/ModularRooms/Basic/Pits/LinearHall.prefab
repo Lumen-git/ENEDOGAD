@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6703342351924239006}
   m_Layer: 7
   m_Name: LinearHall
-  m_TagString: Untagged
+  m_TagString: UnitCenter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -262,9 +262,9 @@ GameObject:
   - component: {fileID: 3781677680795815938}
   - component: {fileID: 8901927588233484475}
   - component: {fileID: 7048932413870896214}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: UnitCenter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -486,6 +486,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlashingLight
       objectReference: {fileID: 0}
+    - target: {fileID: 940327709744697183, guid: bb7a9330610378141b630ea4b6df8225, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 3741247024480726168, guid: bb7a9330610378141b630ea4b6df8225, type: 3}
       propertyPath: m_LocalPosition.x
       value: -10
@@ -587,6 +591,10 @@ PrefabInstance:
     - target: {fileID: 2448550821186664284, guid: 1909b9012a422a3429f278ee40635508, type: 3}
       propertyPath: m_Name
       value: UnitCenter
+      objectReference: {fileID: 0}
+    - target: {fileID: 2448550821186664284, guid: 1909b9012a422a3429f278ee40635508, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

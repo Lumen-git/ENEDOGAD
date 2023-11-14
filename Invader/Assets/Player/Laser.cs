@@ -20,13 +20,15 @@ public class Laser : MonoBehaviour
     private void OnTriggerEnter(Collider other){
         if (other.gameObject.tag == "Enemy1"){
             other.gameObject.GetComponent<Enemy1>().Damage();
+            Destroy(gameObject);
         }
         if (other.gameObject.tag == "Enemy2"){
             other.gameObject.GetComponent<Enemy2>().Damage();
-        }
-        if ((other.gameObject.tag != "Player") || (other.gameObject.tag != "UnitCenter") || (other.gameObject.tag != "PacPellet")){
             Destroy(gameObject);
         }
+        /*if ((other.gameObject.tag != "Player") || (other.gameObject.tag != "UnitCenter") || (other.gameObject.tag != "PacPellet")){
+            Destroy(gameObject);
+        }*/
     }
 
 }
