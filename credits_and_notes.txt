@@ -15,6 +15,7 @@ Player Sprite adapted from Bezerk for the Atari 2600, and inspired by Bit.Trip
 Heal Sprite inspired by Doom (1993) "stim pack" texture
 W1-W10 based on SCP field and Wanderer symbols - https://scp-wiki.wikidot.com/scp-field-codes & https://scp-wiki.wikidot.com/wanderer-symbols
 Flashing light pattern in "void rooms" based on the infamous Quake/Source flashing light
+SCP Door texture from SCP Containment Breach
 
 "Do not go gentle into that good night" quote by poem of the same name by Dylan Thomas, 1951
 
