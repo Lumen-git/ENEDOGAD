@@ -128,12 +128,12 @@ public class GameManager : MonoBehaviour
 
     public void RestartTheGame(){
         if (isPaused){Time.timeScale = 1;}
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 
     public void mainMenu(){
         Time.timeScale = 1;
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
     public void increaseMaxHealth(){

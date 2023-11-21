@@ -18,6 +18,6 @@ public class MainMenu : MonoBehaviour
     }
 
     public void TheGame(){
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 }
